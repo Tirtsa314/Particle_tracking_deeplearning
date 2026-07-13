@@ -84,7 +84,7 @@ frame = np.stack([arr8, arr8, arr8], axis=-1)
 
 model = YOLO(r"C:\Users\DenHaan\Downloads\best_09-04_20epoch_ratio1.pt")
 
-mpp_train = 0.32
+mpp_train = 0.32 #what is the resoution it was trained on
 side_train_um = 10.0
 
 # mpp_real = 0.65
@@ -108,7 +108,7 @@ pixel_scale = side_real_px / side_ref_px
 SCALE = train_side_px / real_side_px
 
 
-CONF = 0.05
+CONF = 0.05 #confidence threshold of the model
 TILE = 512
 STRIDE = 256   
 
