@@ -1,4 +1,7 @@
-
+""" 
+author: Tirtsa den Haan 
+06-07-2026
+"""
 print("Image_generator.py started")             
 import numpy as np
 import deeptrack as dt
@@ -24,9 +27,9 @@ def generate_image(
         side_length=side_length_um * u.um,
         thickness=thickness_um * u.um,
         rotation=rot_sampler,
-        refractive_index = 1.49 + 0.000j,
+        refractive_index = 1.49 + np.random.uniform(0, 0.001) * 1j,
         position=pos_sampler,
-        z= 0.0 * u.um,
+        z= np.random.uniform(-0.5, 0.5) * u.um, #in micrometer
         class_id=1,
         is_triangle=1,
     )
@@ -67,8 +70,7 @@ def generate_image(
                 refractive_index_medium=1.33,
                 illumination=illum,
                 output_region=(0, 0, image_size, image_size),
-                # pupil=GaussianApodization(sigma=2.5),
-                # pupil=SphericalAberration(coefficient=0.3),
+                pupil = SphericalAberration(coefficient=0.2) >> GaussianApodization(sigma=1.8),
             )
 
             renders.append(bf(sample))
@@ -84,8 +86,8 @@ def generate_image(
     image_of_particles = (
         incoherently_illuminated_sample
         >> dt.AveragePooling((scale, scale, 1))
-        # >> noise
-        # >> dt.GaussianBlur(sigma=1.0)
+        >> noise
+        >> dt.GaussianBlur(sigma=1.1)
     )
 
     image_of_particles.store_properties()

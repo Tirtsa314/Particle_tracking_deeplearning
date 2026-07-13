@@ -1,4 +1,7 @@
-
+""" 
+author: Tirtsa den Haan 
+06-07-2026
+"""
 import deeptrack as dt
 import numpy as np
 from deeptrack import units as u

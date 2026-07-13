@@ -1,4 +1,7 @@
-#%%
+""" 
+author: Tirtsa den Haan 
+06-07-2026
+"""
 import numpy as np
 from shapely.geometry import Polygon
 from shapely.affinity import rotate, translate
@@ -546,8 +549,7 @@ def cluster_positions(scale, side_um, um_per_pixel):
         thickness_base=5 * scale,
         thickness_bend_gain=30 * scale,
 
-        # Important for triangles:
-        # side = 21.9 px, apothem = 15.1 px, circumradius = 18.6 px
+
         min_dist=TRIANGLE_INNER_R_PX * 2 + 6*scale,
 
         # margin should be larger than the triangle circumradius
@@ -583,7 +585,6 @@ def cluster_positions(scale, side_um, um_per_pixel):
     )
 
     # For a normal DeepTrack rotation=(rx, ry, rz),
-    # the optimized in-plane angle should go into rz.
     rot_sampler = make_rotation_sampler(rx_arr, ry_arr, rz_arr)
     pos_sampler = make_position_sampler(positions)
 

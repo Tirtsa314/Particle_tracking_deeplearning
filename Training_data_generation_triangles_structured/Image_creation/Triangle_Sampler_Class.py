@@ -1,4 +1,7 @@
-
+""" 
+author: Tirtsa den Haan 
+06-07-2026
+"""
 import numpy as np
 from Training_data_generation_triangles_structured.Image_creation.particle_position.cluster_position import cluster_positions
 from Training_data_generation_triangles_structured.Rotations import rotation_matrix_xyz
@@ -86,14 +89,6 @@ class TrianglePrismSampler:
     def _sample_pose(self):
         cx, cy = self._pos_sampler_fn()
         rx, ry, rz = self._rot_sampler_fn()
-
-
-        print(
-        "POSE:",
-        "position =", (cx, cy),
-        "rotation rad =", (rx, ry, rz),
-        "rotation deg =", np.rad2deg([rx, ry, rz]),
-    )
 
 
         outline = outlines(
