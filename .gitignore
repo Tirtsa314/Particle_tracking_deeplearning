@@ -1,25 +1,12 @@
-# Python virtual environments
-.venv*/
-venv/
-env/
+# Ignore everything in the main folder
+/*
 
-# Python-generated files
-__pycache__/
-*.py[cod]
-*.egg-info/
-build/
-dist/
+# Publish only these folders
+!/Training_data_generation_triangles_structured/
+!/Training_of_model/
+!/Inference/
 
-# Jupyter and editors
-.ipynb_checkpoints/
-.vscode/
-
-# Large experimental data and model weights
-*.nd2
-*.pt
-*.pth
-*.onnx
-
-# Generated output
-runs/
-outputs/
+# Also publish these root files
+!/.gitignore
+!/requirements.txt
+!/README.md
