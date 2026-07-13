@@ -1,0 +1,25 @@
+# Python virtual environments
+.venv*/
+venv/
+env/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Jupyter and editors
+.ipynb_checkpoints/
+.vscode/
+
+# Large experimental data and model weights
+*.nd2
+*.pt
+*.pth
+*.onnx
+
+# Generated output
+runs/
+outputs/
