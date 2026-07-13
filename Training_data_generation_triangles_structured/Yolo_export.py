@@ -1,4 +1,7 @@
-
+""" 
+author: Tirtsa den Haan 
+06-07-2026
+"""
 import os, time, queue
 import numpy as np
 import cv2
@@ -139,7 +142,7 @@ def writer_loop(out_q: Queue, out_dir: Path, split: str, start_idx: int, print_e
         img_path = img_dir / f"{stem}.png"
         lab_path = lab_dir / f"{stem}.txt"
 
-        # faster PNG
+
         cv2.imwrite(str(img_path), img_u8, [cv2.IMWRITE_PNG_COMPRESSION, png_compression])
         lab_path.write_text("\n".join(lines) + ("\n" if lines else ""))
 
@@ -234,7 +237,7 @@ def export_one_yolo_test(
     print("side_length_px =", side_length_px)
     print("thickness_px =", thickness_px)
 
-    # Use this if your current cluster_positions takes arguments.
+
     rot_sampler_fn, pos_sampler_fn, N_cluster = clusterpositions_test_one(
         scale=scale,
         side_um=side_length_um,

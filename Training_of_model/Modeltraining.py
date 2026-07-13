@@ -1,3 +1,7 @@
+""" 
+author: Tirtsa den Haan 
+06-07-2026
+"""
 from ultralytics import YOLO
 import torch
 import time

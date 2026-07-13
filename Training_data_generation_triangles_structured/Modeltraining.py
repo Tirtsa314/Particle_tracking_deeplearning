@@ -1,25 +1,7 @@
-# #%%
-# from ultralytics import YOLO
-
-
-# particle_finder2000_model = YOLO("yolo11m-seg.pt")
-
-
-# train_results = particle_finder2000_model.train(
-#     data=".yaml",  # Path to dataset configuration file
-#     epochs=100,  # Number of training epochs
-#     imgsz=2048,  # Image size for training
-#     device="gpu",  # Device to run on (e.g., 'cpu', 0, [0,1,2,3])
-# )
-
-# # Evaluate the model's performance on the validation set
-# metrics = particle_finder2000_model.val()
-
-# # Export the model to ONNX format for deployment
-# path = particle_finder2000_model.export(format="onnx")  # Returns the path to the exported model
-
-# print("Exported model saved to:", path)
-
+""" 
+author: Tirtsa den Haan 
+06-07-2026
+"""
 #%%
 from ultralytics import YOLO
 import time

@@ -1,4 +1,7 @@
-
+""" 
+author: Tirtsa den Haan 
+06-07-2026
+"""
 #%%
 import numpy as np
 import matplotlib.pyplot as plt

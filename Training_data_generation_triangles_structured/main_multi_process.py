@@ -1,4 +1,7 @@
-
+""" 
+author: Tirtsa den Haan 
+06-07-2026
+"""
 
 from Training_data_generation_triangles_structured.Yolo_export import stream_export_yolo_parallel
 
